@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Navigate,
+} from "react-router-dom";
 
 import DashboardLayout from "./Pages/Layout";
 import Dashboard from "./Pages/Dashboard";
@@ -12,7 +18,7 @@ import LoginPage from "./Pages/LoginPage/LoginPage";
 import PrivateRoutes from "./Components/PrivateRoutes/PrivateRoutes";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <Router>
       <Routes>
@@ -22,8 +28,9 @@ const App = () => {
             <LoginPage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
           }
         />
-        <Route path="/" element={<PrivateRoutes isLoggedIn={isLoggedIn} />}>
+        <Route path="/"element={<PrivateRoutes isLoggedIn={isLoggedIn}/>}>
           <Route element={<DashboardLayout />}>
+            <Route index element={<Navigate to="/dashboard" />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="products" element={<Products />} />
             <Route path="users" element={<Users />} />
