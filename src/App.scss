@@ -1,0 +1,36 @@
+.tcontainer {
+    background-color: red;
+
+
+    .child {
+        h1 {
+            color: rgb(24, 23, 23);
+        }
+    }
+}
+
+li a{
+    &.active{
+
+        background-color: rgb(7, 154, 240);
+    }
+}
+a{
+    list-style: none !important;
+    text-decoration: none !important;
+    color: white !important;
+}
+.bgc{
+    background-color: white;
+}
+.bg-nav{
+    background-color: rgb(19, 81, 95);
+    color: white;
+}
+li{
+    font-size: 14px;
+}
+.brand-name{
+    font-size: 16px;
+    font-weight: 600;
+}
