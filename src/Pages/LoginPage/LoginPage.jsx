@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import loginImage from "../../assets/images/loginBgImage.jpg";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { FaCube } from "react-icons/fa";
 const LoginPage = ({ isLoggedIn = false, setIsLoggedIn = () => {} }) => {
   const navigate = useNavigate();
   const [loginFormData, setLoginFormData] = useState({
@@ -9,16 +10,10 @@ const LoginPage = ({ isLoggedIn = false, setIsLoggedIn = () => {} }) => {
     password: "",
   });
 
-
-  const handleLogin = (e) => {
-    if (isLoggedIn) {
-      <Link to="/dashboard" />;
-    }
-  };
   const admin = { email: "fazil@gmail.com", password: "fazil123" };
   localStorage.setItem("admin", JSON.stringify(admin));
   const getAdminData = JSON.parse(localStorage?.getItem("admin"));
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -36,19 +31,22 @@ const LoginPage = ({ isLoggedIn = false, setIsLoggedIn = () => {} }) => {
           <Col>
             <div className="my-2 p-2">
               <div>
+                <span className="px-2">
+                  <FaCube />
+                </span>
                 The <span style={{ fontWeight: "bold" }}>Cube</span> Factory
               </div>
               <div className=" ">
                 <div
                   className=" align-content-center justify-content-center p-2 m-2"
-                  style={{ height: "100vh", width: "80%" }}
+                  style={{ height: "100vh", width: "70%" }}
                 >
                   <h2 className="px-2 mx-2">Welcome Back</h2>
                   <p className="px-2 mx-2" style={{ color: "grey" }}>
                     Enter Your Details
                   </p>
                   <div>
-                    <form onSubmit={(e) => handleSubmit(e)}>
+                    <form className="" onSubmit={(e) => handleSubmit(e)}>
                       <div className="p-2 m-2">
                         <label className="form-label">Email Address</label>
                         <input
@@ -91,7 +89,7 @@ const LoginPage = ({ isLoggedIn = false, setIsLoggedIn = () => {} }) => {
 
                       <div className="d-flex justify-content-center p-2 m-2">
                         <button className="btn btn-primary" type="submit">
-                          signin
+                          sign in
                         </button>
                       </div>
                     </form>
@@ -100,14 +98,17 @@ const LoginPage = ({ isLoggedIn = false, setIsLoggedIn = () => {} }) => {
               </div>
             </div>
           </Col>
-          <Col>
-            <img
-              className="object-fit-fill"
-              width="100%"
-              height="100%"
-              src={loginImage}
-              alt="img"
-            ></img>
+          <Col className="bgImg d-flex align-items-center">
+            
+            <div className="">
+              <img
+                className="object-fit-fill"
+                width="100%"
+                height="100%"
+                src={loginImage}
+                alt="img"
+              ></img>
+            </div>
           </Col>
         </Row>
       </Container>

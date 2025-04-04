@@ -17,7 +17,7 @@ const DashboardLayout = () => {
               <div className="bgc">
                 <Header />
               </div>
-              <div className="flow">
+              <div className="">
                 <Outlet />
               </div>
             </div>

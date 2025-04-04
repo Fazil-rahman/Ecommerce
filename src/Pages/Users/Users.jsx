@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Users = () => {
   return (
-    <div>Users</div>
-  )
-}
+    <div className="container-fluid">
+      <div></div>
+    </div>
+  );
+};
 
-export default Users
+export default Users;

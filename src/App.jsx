@@ -18,7 +18,7 @@ import LoginPage from "./Pages/LoginPage/LoginPage";
 import PrivateRoutes from "./Components/PrivateRoutes/PrivateRoutes";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <Router>
       <Routes>
