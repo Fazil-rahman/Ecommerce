@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import loginImage from "../../assets/images/loginBgImage.jpg";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaCube } from "react-icons/fa";
 const LoginPage = ({ isLoggedIn = false, setIsLoggedIn = () => {} }) => {
   const navigate = useNavigate();

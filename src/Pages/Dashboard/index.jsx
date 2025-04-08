@@ -65,7 +65,7 @@ const Dashboard = () => {
                     <td>{item.name}</td>
                     <td>{item.price}</td>
                     <td>{item.payment}</td>
-                    <td><button className="btn">{item.status}</button></td>
+                    <td>{item.status}</td>
                   </tr>
                 ))}
               </tbody>
