@@ -1,35 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { GlobalContext } from "../../Context/GlobalProvider";
 import CommonTable from "../../Components/Table/CommonTable";
 import { useNavigate } from "react-router-dom";
 
 const Products = () => {
-   const initialData = {
-      image: "",
-      category: "",
-      name: "",
-      status: "",
-      price: "",
-    };
     const {
       products = [],
-      handleAddProduct = () => {},
       setProducts = () => {},
     } = useContext(GlobalContext);
   
-  
-    const [formData, setFormData] = useState(initialData);
     const handleRowDelete = (row) => {
       const updatedProducts = products.filter((curr, idx) => curr.id !== row.id);
       setProducts(updatedProducts);
       console.log(row);
     };
-    const handleEditRow = (row, index) => {
-      let updatedProducts = [row];
-      setFormData(updatedProducts);
-      console.log(updatedProducts);
-    };
-    
+
   const openFormEdit= (id)=>{
     navigate(`edit/${id}`)
   }
